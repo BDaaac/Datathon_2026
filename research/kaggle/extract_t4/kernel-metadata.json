@@ -1,0 +1,18 @@
+{
+ "id": "dimashbekeshev/forte-extract-t4",
+ "title": "forte extract t4",
+ "code_file": "main.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_tpu": false,
+ "enable_internet": true,
+ "dataset_sources": [
+  "dimashbekeshev/forte-videos",
+  "dimashbekeshev/forte-code"
+ ],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

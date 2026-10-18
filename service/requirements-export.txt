@@ -1,0 +1,2 @@
+# Only needed when preparing the local ONNX model, not during video analysis.
+onnx>=1.17,<2

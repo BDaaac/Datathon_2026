@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4a0221">
+<title>Видеоконтроль · Проверка кассовых операций</title>
+<link rel="stylesheet" href="/static/fonts/open-sans.css"><link rel="stylesheet" href="/static/style.css"><script src="/static/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
+<header class="site-header"><div class="header-inner">
+<a class="brand" href="/" aria-label="Видеоконтроль — на главную">Видеоконтроль</a>
+<span class="product-name">Контроль кассовых операций</span>
+<nav aria-label="Основная навигация">
+<button id="nav-check" class="nav-item active" type="button" aria-current="page">Проверить видео</button>
+<button id="nav-result" class="nav-item" type="button" disabled hidden>Результат</button>
+<button id="nav-help" class="nav-item" type="button">Помощь</button>
+</nav></div></header>
+<main id="main" tabindex="-1">
+<section id="check-view" class="check-view" aria-labelledby="title">
+<div class="page-heading"><h1 id="title">Проверка видеозаписи</h1><p class="lead">Найдите моменты, которые требуют внимания,<br> без просмотра всей записи.</p></div>
+<form id="upload-form" class="upload-panel" novalidate>
+<label class="field-label" for="file">Запись с камеры</label>
+<label id="dropzone" class="dropzone" for="file">
+<input id="file" name="file" type="file" accept=".mov,video/quicktime" aria-label="Выбрать запись с камеры" aria-describedby="file-help">
+<svg class="upload-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="5" y="7" width="30" height="26" rx="5"/><path d="m17 15 8 5-8 5V15Z"/></svg>
+<strong id="file-title">Перетащите видео сюда</strong><span id="file-subtitle">или выберите на компьютере</span>
+<span class="file-picker" id="file-picker">Выбрать файл</span>
+</label>
+<p id="file-help" class="field-help">MOV · до 100 МБ · одна запись за раз</p>
+<div id="upload-progress" hidden><label for="progress">Загружаем запись <span id="percent">0%</span></label><progress id="progress" max="100" value="0">0%</progress></div>
+<p id="error" class="error" role="alert" hidden></p>
+<button type="submit" id="submit" class="primary" disabled>Проверить видео</button>
+<p id="status" class="upload-status" role="status" aria-live="polite">Выберите файл, чтобы начать проверку.</p>
+<button type="button" id="retry" class="secondary" hidden>Запросить результат ещё раз</button>
+</form>
+<p class="privacy-note"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Видео удаляется с сервера после проверки.</p>
+<details class="quick-help"><summary>Как проходит проверка</summary><ol><li><strong>Загрузите запись.</strong> Подойдёт видео, на котором видны кассир и рабочее место.</li><li><strong>Посмотрите результат.</strong> Сервис покажет время события, кадры и объяснение, что стоит проверить.</li><li><strong>Сохраните для разбора.</strong> Проверьте обстоятельства и при необходимости сохраните результат в PDF.</li></ol><button type="button" id="help-link" class="text-button">Открыть подробную инструкцию →</button></details>
+</section>
+<section id="review-view" hidden aria-labelledby="verdict">
+<div class="review-top"><button type="button" id="new-check" class="text-button">← Новая проверка</button><div class="review-actions"><a id="open-window" class="text-button" href="#" target="_blank" rel="noopener">Открыть отдельно ↗</a><button type="button" id="print-result" class="secondary" disabled>Сохранить / печать</button></div></div>
+<section id="result" class="result-heading" aria-busy="false"><div><p class="eyebrow">РЕЗУЛЬТАТ ПРОВЕРКИ</p><h1 id="verdict" tabindex="-1">Проверяем запись</h1><p id="result-summary" class="lead"></p></div><span id="result-badge" class="result-badge">В обработке</span></section>
+<div id="processing-panel" class="processing-panel" hidden><span class="spinner" aria-hidden="true"></span><div><h2>Ищем моменты для проверки</h2><p id="processing-status" role="status" aria-live="polite">Запись загружена. Можно дождаться результата на этой странице.</p><p id="processing-elapsed" class="elapsed" aria-hidden="true"></p><p class="muted">Можно переключиться на другую вкладку — её заголовок покажет, когда результат будет готов. Загружать файл повторно не нужно.</p></div></div>
+<div id="result-error" class="error" role="alert" hidden><p id="result-error-text"></p><button type="button" id="result-retry" class="secondary">Запросить результат ещё раз</button></div>
+<div id="review-layout" class="review-layout" hidden>
+<section id="preview" class="preview-panel" aria-labelledby="preview-title"><div class="section-heading"><h2 id="preview-title">Видеозапись</h2><span id="record-name" class="subtle-label"></span></div><div id="empty-preview"><span class="empty-video-icon" aria-hidden="true">▷</span><strong id="empty-title">Исходное видео недоступно в этом окне</strong><p>Посмотрите кадры рядом с каждым событием. Запись можно воспроизвести в окне, где её загрузили.</p></div><video id="video" controls muted playsinline preload="metadata" hidden aria-label="Загруженная видеозапись"></video><p id="codec-note" class="muted" hidden>Браузер не воспроизводит этот формат видео. Посмотрите сохранённые кадры событий — проверка от этого не меняется.</p><div id="timeline-wrap" hidden><div id="timeline" aria-label="Отметки событий"></div><div class="timeline-labels"><span>00:00</span><span id="duration">—</span></div><p class="muted">Нажмите на отметку, чтобы перейти к событию.</p></div><div class="review-guidance"><h3>Что делать дальше</h3><p id="next-action">Проверьте отмеченные моменты. Если ситуация требует разбора, сохраните результат и передайте ответственному менеджеру.</p><p class="muted">Отметка «Просмотрено» действует только в этой вкладке и не подтверждает нарушение.</p></div></section>
+<section class="events-panel" aria-labelledby="events-title"><div class="section-heading"><h2 id="events-title">Моменты для проверки</h2><span id="review-count" class="subtle-label" role="status"></span></div><div id="violations"></div><div id="clear-result" class="clear-result" hidden><span aria-hidden="true">✓</span><h3>Нет отмеченных событий</h3><p>Сервис не нашёл видимых признаков по проверяемым правилам. При необходимости просмотрите запись самостоятельно.</p></div></section>
+</div>
+</section>
+<section id="help-view" class="help-view" hidden aria-labelledby="help-title"><p class="eyebrow">КОРОТКАЯ ИНСТРУКЦИЯ</p><h1 id="help-title" tabindex="-1">От записи к понятному результату</h1><p class="lead">Сервис помогает найти события на видео. Окончательное решение принимает сотрудник банка.</p><div class="role-guide"><div class="role-control"><label for="role">Показать подсказки для</label><select id="role"><option value="security">Охранника</option><option value="manager">Менеджера</option></select></div><p id="role-intro">Откройте отмеченный момент и посмотрите, что произошло в кассовой зоне.</p><h2 id="role-action">Передайте на разбор</h2><p id="role-action-text">Если ситуация требует внимания, сохраните результат для ответственного менеджера.</p></div><div class="help-steps"><article><span>01</span><h2>Выберите запись с камеры</h2><p>Нужен файл MOV размером до 100 МБ. Нажмите «Выбрать файл» или перетащите файл в область загрузки, затем нажмите «Проверить видео».</p></article><article><span>02</span><h2>Дождитесь результата</h2><p>Проверка может занять несколько минут. При потере соединения нажмите «Запросить результат ещё раз» — загружать видео заново не нужно.</p></article><article><span>03</span><h2>Разберите отмеченные моменты</h2><p>Нажмите на время события, чтобы перейти к нему в видео. Кадр можно увеличить нажатием. Пояснение показывает, что нужно проверить; нормативное основание раскрывается отдельно.</p></article><article><span>04</span><h2>Сохраните для дальнейшей работы</h2><p>Кнопка «Сохранить / печать» открывает печать: выберите принтер или сохранение в PDF. Отметки о просмотре сохраняются только до закрытия или обновления вкладки.</p></article></div><details class="help-detail"><summary>Чем отличаются подсказки для охранника и менеджера?</summary><p>Охраннику — осмотреть событие и передать на разбор. Менеджеру — сопоставить увиденное с порядком работы и уточнить обстоятельства. Переключатель меняет только подсказки, а не права доступа или результат анализа.</p></details><details class="help-detail"><summary>Что означает «Нарушение не обнаружено»?</summary><p>На записи не найдены видимые признаки по проверяемым правилам. Это не гарантирует отсутствие нарушений: за пределами кадра, без звука или при плохом качестве записи часть действий нельзя проверить.</p></details><details class="help-detail"><summary>Где остаются видео и результаты?</summary><p>Видео удаляется с сервера после завершения обработки. В открытой вкладке плеер использует выбранный вами локальный файл. Результат с отдельными кадрами доступен по ссылке «Открыть отдельно». Сохраните эту ссылку, если планируете вернуться к проверке.</p></details><button type="button" id="help-back" class="secondary">Вернуться к работе</button></section>
+<footer><span>Для менеджеров и сотрудников охраны</span><p>Окончательное решение по событию принимает сотрудник банка.</p></footer>
+</main></body></html>
+

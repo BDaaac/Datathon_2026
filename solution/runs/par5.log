@@ -1,0 +1,6 @@
+видео 14: стена 233 с, пик RAM 0.64 ГБ, {"load": 1.6, "proc": 207.2, "verdict": "no_violation"}
+видео 39: стена 177 с, пик RAM 0.62 ГБ, {"load": 1.6, "proc": 150.0, "verdict": "no_violation"}
+видео 4: стена 155 с, пик RAM 0.61 ГБ, {"load": 1.6, "proc": 127.9, "verdict": "no_violation"}
+видео 5: стена 148 с, пик RAM 0.62 ГБ, {"load": 1.6, "proc": 120.1, "verdict": "no_violation"}
+видео 35: стена 219 с, пик RAM 0.66 ГБ, {"load": 1.6, "proc": 192.7, "verdict": "no_violation"}
+ВСЕГО 233 с; RAM системы пик 14.9 из 15.4 ГБ; CPU 18

@@ -1,0 +1,57 @@
+services:
+  service:
+    build:
+      context: ..
+      dockerfile: service/Dockerfile
+    environment:
+      SERVICE_API_KEY: ${SERVICE_API_KEY:?Set SERVICE_API_KEY in service/.env}
+      SERVICE_WORKERS: ${SERVICE_WORKERS:-5}
+      SERVICE_THREADS_PER_WORKER: ${SERVICE_THREADS_PER_WORKER:-2}
+      SERVICE_JOB_TIMEOUT: ${SERVICE_JOB_TIMEOUT:-285}
+      HF_HUB_OFFLINE: "1"
+      TRANSFORMERS_OFFLINE: "1"
+      OPENCV_FFMPEG_THREADS: "1"
+    volumes:
+      - service-data:/data
+    networks:
+      - offline
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    init: true
+    stop_grace_period: 25s
+    restart: unless-stopped
+
+  gateway:
+    image: nginx:stable-alpine
+    user: "101:101"
+    ports:
+      - "127.0.0.1:${SERVICE_PORT:-8000}:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - offline
+      - ingress
+    depends_on:
+      service:
+        condition: service_started
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+volumes:
+  service-data:
+
+networks:
+  offline:
+    internal: true
+  ingress:

@@ -1,0 +1,10 @@
+.venv/
+.deps/
+.uv-cache/
+.pytest_cache/
+__pycache__/
+data/
+.env
+*.log
+ui-validation.jpg
+

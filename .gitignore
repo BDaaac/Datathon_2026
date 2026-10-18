@@ -1,0 +1,60 @@
+# Данные кейса используются только в рамках хакатона (ТЗ, FAQ 6).
+# Основной режим sensors не требует эталонных кадров; h5 — исследовательский режим.
+solution/assets/*.jpg
+tmp/
+
+# ── Секреты ──────────────────────────────────────────────
+**/.env
+!service/.env.example
+tools/PUBLIC_URL.txt
+**/.kaggle/
+
+# ── Окружения и кэши Python ──────────────────────────────
+.venv/
+**/.venv/
+service/.uv-cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# ── Данные кейса: видео, кадры, разметка, условие ────────
+*.mov
+*.mp4
+open (1)/
+research/case/
+~$*.docx
+research/notes/labels_typed.csv
+solution/frames*/
+solution/cache*/
+docs/img/
+pitch/img/
+
+# ── Рабочие данные сервиса ───────────────────────────────
+service/data/
+artifacts/
+
+# ── Пересобираемые бинарники ─────────────────────────────
+# ONNX-модель: python solution/export_onnx.py (веса D-FINE скачиваются с Hugging Face)
+solution/assets/onnx/
+tools/cloudflared/
+*.onnx
+*.safetensors
+
+# Эксперименты (solution/experiments, solution/runs, research/) — В РЕПОЗИТОРИИ, кроме тяжёлого:
+solution/experiments/vlm_verify/*.jpg
+research/kaggle/vlm_grids/
+
+# ── Системное ───────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ── Логи запуска и одноразовое ──────────────────────────
+tools/*.log
+research/kaggle/ext_load/
+
+# ── Презентации (кадры из видео кейса, рендеры) — не в репозиторий ──
+pitch/
+pitch_deck_backup/

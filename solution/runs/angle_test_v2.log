@@ -1,0 +1,42 @@
+01 no_violation [] 22s
+02 no_violation [] 22s
+10 no_violation [] 25s
+11 violation ['valuables_on_desk'] 19s
+12 violation ['personal_items'] 37s
+13 no_violation [] 29s
+14 violation ['personal_items'] 71s
+15 no_violation [] 20s
+16 no_violation [] 31s
+17 no_violation [] 29s
+18 no_violation [] 36s
+19 violation ['personal_items'] 114s
+20 no_violation [] 12s
+21 no_violation [] 20s
+22 no_violation [] 20s
+23 no_violation [] 18s
+24 violation ['valuables_on_desk'] 14s
+25 no_violation [] 32s
+26 no_violation [] 31s
+27 no_violation [] 45s
+28 violation ['pc_unlocked'] 21s
+29 no_violation [] 28s
+03 no_violation [] 29s
+30 violation ['door_open', 'valuables_on_desk', 'outsider'] 32s
+31 violation ['outsider'] 23s
+32 violation ['door_open', 'outsider'] 20s
+33 violation ['door_open'] 15s
+34 violation ['outsider'] 18s
+35 no_violation [] 86s
+37 no_violation [] 29s
+38 violation ['outsider'] 64s
+39 no_violation [] 40s
+04 no_violation [] 25s
+40 violation ['personal_items'] 16s
+43 no_violation [] 13s
+44 no_violation [] 14s
+45 no_violation [] 21s
+46 violation ['personal_items'] 10s
+05 no_violation [] 18s
+08 no_violation [] 25s
+dev найдено 9, ложных 2, баллы 0.54
+lockbox найдено 1, ложных 2, баллы 0.29

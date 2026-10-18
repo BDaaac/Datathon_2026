@@ -1,0 +1,30 @@
+{"fid": "02", "t": 9.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 28.9}
+{"fid": "02", "t": 10.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 18.0}
+{"fid": "02", "t": 11.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 31.7}
+{"fid": "02", "t": 12.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 28.0}
+{"fid": "02", "t": 13.1, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 25.4}
+{"fid": "20", "t": 4.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 44.9}
+{"fid": "20", "t": 5.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 42.9}
+{"fid": "20", "t": 6.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 40.6}
+{"fid": "20", "t": 7.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"card or paper\"}\n```", "sec": 39.8}
+{"fid": "20", "t": 8.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"nothing\"}\n```", "sec": 62.4}
+{"fid": "44", "t": 14.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"card or paper\"}\n```", "sec": 29.5}
+{"fid": "44", "t": 15.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"card or paper\"}\n```", "sec": 41.6}
+{"fid": "44", "t": 16.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"card or paper\"}\n```", "sec": 18.3}
+{"fid": "44", "t": 17.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"banknotes\"}\n```", "sec": 30.5}
+{"fid": "44", "t": 18.0, "truth_phone_video": true, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"card or paper\"}\n```", "sec": 34.8}
+{"fid": "05", "t": 8.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 21.7}
+{"fid": "05", "t": 12.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 22.9}
+{"fid": "05", "t": 20.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 26.1}
+{"fid": "05", "t": 30.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 31.6}
+{"fid": "05", "t": 40.1, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 30.1}
+{"fid": "27", "t": 0.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"banknotes\"}\n```", "sec": 32.1}
+{"fid": "27", "t": 2.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 25.9}
+{"fid": "27", "t": 4.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 20.7}
+{"fid": "27", "t": 6.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": false, \"object_in_hands\": \"banknotes\"}\n```", "sec": 23.6}
+{"fid": "27", "t": 8.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 35.9}
+{"fid": "35", "t": 10.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 22.8}
+{"fid": "35", "t": 18.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 22.0}
+{"fid": "35", "t": 26.0, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 29.9}
+{"fid": "35", "t": 34.1, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 36.2}
+{"fid": "35", "t": 42.1, "truth_phone_video": false, "answer": "```json\n{\"phone\": true, \"object_in_hands\": \"mobile phone\"}\n```", "sec": 26.5}
